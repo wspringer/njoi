@@ -8,10 +8,10 @@
   },
   "dependencies": {
     "@hapi/joi": "15.1.1",
-    "pug": "^2.0.4"
+    "lodash": "^4.17.15",
+    "word-wrap": "^1.2.3"
   },
   "devDependencies": {
-    "html2text": "^0.0.0",
     "jest": "^24.9.0"
   }
 }
