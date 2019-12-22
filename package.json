@@ -4,11 +4,13 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "readme": "runmd --output=./README.md ./README.js.md"
   },
   "dependencies": {
     "@hapi/joi": "15.1.1",
     "lodash": "^4.17.15",
+    "runmd": "^1.2.1",
     "word-wrap": "^1.2.3"
   },
   "devDependencies": {
