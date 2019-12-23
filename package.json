@@ -1,8 +1,8 @@
 {
   "name": "joidoc",
   "version": "1.0.0",
-  "main": "index.js",
   "license": "MIT",
+  "main": "lib/joidoc.js",
   "scripts": {
     "test": "jest",
     "readme": "runmd --output=./README.md ./README.js.md"
