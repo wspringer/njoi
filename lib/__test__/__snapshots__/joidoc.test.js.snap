@@ -25,5 +25,7 @@ exports[`joidoc should a sensible description 1`] = `
   e: [{
     first: <string>,
   }, ...],
+
+  type: <string>,
 }"
 `;

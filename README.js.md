@@ -24,6 +24,7 @@ const schema = Joi.object().keys({
   address: Joi.object().keys({
     street: Joi.string().description('The street'),
     houseNumber: Joi.string().description('The housenumber.'),
+    type: Joi.string().valid('condo', 'appartment', 'mansion'),
     city: Joi.string().description('The city')
   }),
   education: Joi.array().items(Joi.object().keys({
