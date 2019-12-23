@@ -12,11 +12,17 @@ If this is the Joi schema you're defining:
 ```javascript
 const Joi = require('@hapi/joi');
 const schema = Joi.object().keys({
-  a: Joi.string().description('Some string value').default('go'),
-  b: Joi.number().description('Some number').default(5),
-  c: Joi.array().items(Joi.string()).description('An array of strings'),
-  d: Joi.array().items(Joi.object().keys({
-    e: Joi.boolean().description('Some boolean value')
+  name: Joi.string().description('The given name').required(),
+  age: Joi.number().description('The age').default(5),
+  tags: Joi.array().items(Joi.string()).description('A set of tags to be a associated'),
+  address: Joi.object().keys({
+    street: Joi.string().description('The street'),
+    houseNumber: Joi.string().description('The housenumber.'),
+    city: Joi.string().description('The city')
+  }),
+  education: Joi.array().items(Joi.object().keys({
+    school: Joi.string().description('The school attended'),
+    degree: Joi.boolean().description('Got the degree or not')
   }))
 });
 
@@ -26,31 +32,144 @@ const schema = Joi.object().keys({
 
 ```javascript
 const joidoc = require('joidoc');
-console.log(joidoc(schema));
+console.log(joidoc.jsonish(schema));
 
 ⇒ {
 ⇒   /**
-⇒    * Some string value
+⇒    * The given name
 ⇒    */
-⇒   a: "go",
+⇒   name: <string>,
 ⇒ 
 ⇒   /**
-⇒    * Some number
+⇒    * The age
 ⇒    */
-⇒   b: <number>,
+⇒   age: <number>,
 ⇒ 
 ⇒   /**
-⇒    * An array of strings
+⇒    * A set of tags to be a associated
 ⇒    */
-⇒   c: [<string>, ...],
+⇒   tags: [<string>, ...],
 ⇒ 
-⇒   d: [{
+⇒   address: {
 ⇒     /**
-⇒      * Some boolean value
+⇒      * The street
 ⇒      */
-⇒     e: <boolean>,
+⇒     street: <string>,
+⇒ 
+⇒     /**
+⇒      * The housenumber.
+⇒      */
+⇒     houseNumber: <string>,
+⇒ 
+⇒     /**
+⇒      * The city
+⇒      */
+⇒     city: <string>,
+⇒   },
+⇒ 
+⇒   education: [{
+⇒     /**
+⇒      * The school attended
+⇒      */
+⇒     school: <string>,
+⇒ 
+⇒     /**
+⇒      * Got the degree or not
+⇒      */
+⇒     degree: <boolean>,
 ⇒   }, ...],
 ⇒ }
+```
+
+Or a markdown breakdown using:
+
+```javascript
+console.log(joidoc.markdown()(schema));
+
+⇒ ### name: _string_
+⇒ 
+⇒ The given name.
+⇒ 
+⇒ ### age: _number?_
+⇒ 
+⇒ The age. Defaults to `5`.
+⇒ 
+⇒ ### tags[]: _string?_
+⇒ 
+⇒ ### address.street: _string?_
+⇒ 
+⇒ The street.
+⇒ 
+⇒ ### address.houseNumber: _string?_
+⇒ 
+⇒ The housenumber.
+⇒ 
+⇒ ### address.city: _string?_
+⇒ 
+⇒ The city.
+⇒ 
+⇒ ### education[].school: _string?_
+⇒ 
+⇒ The school attended.
+⇒ 
+⇒ ### education[].degree: _boolean?_
+⇒ 
+⇒ Got the degree or not.
+⇒ 
+⇒ 
+```
+
+If you want, then can pass in a callback to have the ability to render some
+additional lines:
+
+```javascript
+const envVariable = (node, context) => {
+  if (context && context.indexOf('[]') < 0) {
+    const name = context.split('.').map(str => str.toUpperCase()).join('_');
+    return `Use the \`${name}\` environment variable to override this setting.`
+  } else {
+    return void 0;
+  }
+}
+
+console.log(joidoc.markdown({extra: envVariable})(schema));
+
+⇒ ### name: _string_
+⇒ 
+⇒ The given name. Use the `NAME` environment 
+⇒ variable to override this setting.
+⇒ 
+⇒ ### age: _number?_
+⇒ 
+⇒ The age. Defaults to `5`. Use the `AGE` 
+⇒ environment variable to override this setting.
+⇒ 
+⇒ ### tags[]: _string?_
+⇒ 
+⇒ ### address.street: _string?_
+⇒ 
+⇒ The street. Use the `ADDRESS_STREET` environment 
+⇒ variable to override this setting.
+⇒ 
+⇒ ### address.houseNumber: _string?_
+⇒ 
+⇒ The housenumber. Use the `ADDRESS_HOUSENUMBER` 
+⇒ environment variable to override this setting.
+⇒ 
+⇒ ### address.city: _string?_
+⇒ 
+⇒ The city. Use the `ADDRESS_CITY` environment 
+⇒ variable to override this setting.
+⇒ 
+⇒ ### education[].school: _string?_
+⇒ 
+⇒ The school attended.
+⇒ 
+⇒ ### education[].degree: _boolean?_
+⇒ 
+⇒ Got the degree or not.
+⇒ 
+⇒ 
 ```
 
 ----
