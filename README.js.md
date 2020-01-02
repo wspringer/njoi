@@ -1,7 +1,7 @@
 ```javascript --hide
 runmd.onRequire = function(path) {
-  if (path === 'joidoc') {
-    return './lib/joidoc.js';
+  if (path === 'njoi') {
+    return './lib/njoi.js';
   } else {
     return path;
   }
@@ -37,14 +37,14 @@ const schema = Joi.object().keys({
 … then you will be able to generate something a little easier on the eyes using:
 
 ```javascript --run simple
-const joidoc = require('joidoc');
-console.log(joidoc.jsonish(schema));
+const njoi = require('njoi');
+console.log(njoi.jsonish(schema));
 ```
 
 Or a markdown breakdown using:
 
 ```javascript --run simple
-console.log(joidoc.markdown()(schema));
+console.log(njoi.markdown()(schema));
 ```
 
 If you want, then can pass in a callback to have the ability to render some
@@ -60,5 +60,5 @@ const envVariable = (node, context) => {
   }
 }
 
-console.log(joidoc.markdown({extra: envVariable})(schema));
+console.log(njoi.markdown({extra: envVariable})(schema));
 ```

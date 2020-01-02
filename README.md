@@ -18,6 +18,7 @@ const schema = Joi.object().keys({
   address: Joi.object().keys({
     street: Joi.string().description('The street'),
     houseNumber: Joi.string().description('The housenumber.'),
+    type: Joi.string().valid('condo', 'appartment', 'mansion'),
     city: Joi.string().description('The city')
   }),
   education: Joi.array().items(Joi.object().keys({
@@ -31,8 +32,8 @@ const schema = Joi.object().keys({
 … then you will be able to generate something a little easier on the eyes using:
 
 ```javascript
-const joidoc = require('joidoc');
-console.log(joidoc.jsonish(schema));
+const njoi = require('njoi');
+console.log(njoi.jsonish(schema));
 
 ⇒ {
 ⇒   /**
@@ -61,6 +62,8 @@ console.log(joidoc.jsonish(schema));
 ⇒      */
 ⇒     houseNumber: <string>,
 ⇒ 
+⇒     type: <string>,
+⇒ 
 ⇒     /**
 ⇒      * The city
 ⇒      */
@@ -84,7 +87,7 @@ console.log(joidoc.jsonish(schema));
 Or a markdown breakdown using:
 
 ```javascript
-console.log(joidoc.markdown()(schema));
+console.log(njoi.markdown()(schema));
 
 ⇒ ### name: _string_
 ⇒ 
@@ -103,6 +106,10 @@ console.log(joidoc.markdown()(schema));
 ⇒ ### address.houseNumber: _string?_
 ⇒ 
 ⇒ The housenumber.
+⇒ 
+⇒ ### address.type: _string?_
+⇒ 
+⇒ Set it to either `condo`, `appartment`, or `mansion`.
 ⇒ 
 ⇒ ### address.city: _string?_
 ⇒ 
@@ -132,34 +139,37 @@ const envVariable = (node, context) => {
   }
 }
 
-console.log(joidoc.markdown({extra: envVariable})(schema));
+console.log(njoi.markdown({extra: envVariable})(schema));
 
 ⇒ ### name: _string_
 ⇒ 
-⇒ The given name. Use the `NAME` environment 
-⇒ variable to override this setting.
+⇒ The given name. Use the `NAME` environment variable to override this setting.
 ⇒ 
 ⇒ ### age: _number?_
 ⇒ 
-⇒ The age. Defaults to `5`. Use the `AGE` 
-⇒ environment variable to override this setting.
+⇒ The age. Defaults to `5`. Use the `AGE` environment variable to override this 
+⇒ setting.
 ⇒ 
 ⇒ ### tags[]: _string?_
 ⇒ 
 ⇒ ### address.street: _string?_
 ⇒ 
-⇒ The street. Use the `ADDRESS_STREET` environment 
-⇒ variable to override this setting.
+⇒ The street. Use the `ADDRESS_STREET` environment variable to override this 
+⇒ setting.
 ⇒ 
 ⇒ ### address.houseNumber: _string?_
 ⇒ 
-⇒ The housenumber. Use the `ADDRESS_HOUSENUMBER` 
-⇒ environment variable to override this setting.
+⇒ The housenumber. Use the `ADDRESS_HOUSENUMBER` environment variable to override 
+⇒ this setting.
+⇒ 
+⇒ ### address.type: _string?_
+⇒ 
+⇒ Use the `ADDRESS_TYPE` environment variable to override this setting. Set it to 
+⇒ either `condo`, `appartment`, or `mansion`.
 ⇒ 
 ⇒ ### address.city: _string?_
 ⇒ 
-⇒ The city. Use the `ADDRESS_CITY` environment 
-⇒ variable to override this setting.
+⇒ The city. Use the `ADDRESS_CITY` environment variable to override this setting.
 ⇒ 
 ⇒ ### education[].school: _string?_
 ⇒ 
