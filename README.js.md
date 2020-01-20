@@ -26,12 +26,12 @@ const schema = Joi.object().keys({
     houseNumber: Joi.string().description('The housenumber.'),
     type: Joi.string().valid('condo', 'appartment', 'mansion'),
     city: Joi.string().description('The city')
-  }),
+  }).label('Address'),
   education: Joi.array().items(Joi.object().keys({
     school: Joi.string().description('The school attended'),
     degree: Joi.boolean().description('Got the degree or not')
-  }))
-});
+  }).label('Education'))
+}).label('Person');
 ```
 
 … then you will be able to generate something a little easier on the eyes using:
@@ -46,6 +46,13 @@ Or a markdown breakdown using:
 ```javascript --run simple
 console.log(njoi.markdown()(schema));
 ```
+
+Or a JSDoc breakdown using:
+
+```javascript --run simple
+console.log(njoi.jsdoc()(schema));
+```
+
 
 If you want, then can pass in a callback to have the ability to render some
 additional lines:
@@ -62,3 +69,4 @@ const envVariable = (node, context) => {
 
 console.log(njoi.markdown({extra: envVariable})(schema));
 ```
+

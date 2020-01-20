@@ -26,6 +26,8 @@ exports[`njoi should a sensible description 1`] = `
     first: <string>,
   }, ...],
 
+  f: <string>,
+
   type: <string>,
 }"
 `;

@@ -20,12 +20,12 @@ const schema = Joi.object().keys({
     houseNumber: Joi.string().description('The housenumber.'),
     type: Joi.string().valid('condo', 'appartment', 'mansion'),
     city: Joi.string().description('The city')
-  }),
+  }).label('Address'),
   education: Joi.array().items(Joi.object().keys({
     school: Joi.string().description('The school attended'),
     degree: Joi.boolean().description('Got the degree or not')
-  }))
-});
+  }).label('Education'))
+}).label('Person');
 
 ```
 
@@ -126,6 +126,35 @@ console.log(njoi.markdown()(schema));
 ⇒ 
 ```
 
+Or a JSDoc breakdown using:
+
+```javascript
+console.log(njoi.jsdoc()(schema));
+
+⇒ /**
+⇒  * @typedef Person
+⇒  * @property {string} name - The given name
+⇒  * @property {number} [age=5] - The age
+⇒  * @property {string[]} [tags] - A set of tags to be a associated
+⇒  * @property {Address} [address]
+⇒  * @property {Education[]} [education]
+⇒  */
+⇒ /**
+⇒  * @typedef Address
+⇒  * @property {string} [street] - The street
+⇒  * @property {string} [houseNumber] - The housenumber.
+⇒  * @property {'condo'|'appartment'|'mansion'} [type]
+⇒  * @property {string} [city] - The city
+⇒  */
+⇒ /**
+⇒  * @typedef Education
+⇒  * @property {string} [school] - The school attended
+⇒  * @property {boolean} [degree] - Got the degree or not
+⇒  */
+⇒ 
+```
+
+
 If you want, then can pass in a callback to have the ability to render some
 additional lines:
 
@@ -181,6 +210,7 @@ console.log(njoi.markdown({extra: envVariable})(schema));
 ⇒ 
 ⇒ 
 ```
+
 
 ----
 Markdown generated from [./README.js.md](README.js.md) by [![RunMD Logo](http://i.imgur.com/h0FVyzU.png)](https://github.com/broofa/runmd)
