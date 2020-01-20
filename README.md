@@ -132,7 +132,7 @@ Or a JSDoc breakdown using:
 console.log(njoi.jsdoc()(schema));
 
 ⇒ /**
-⇒  * @typedef Person
+⇒  * @typedef {Object} Person
 ⇒  * @property {string} name - The given name
 ⇒  * @property {number} [age=5] - The age
 ⇒  * @property {string[]} [tags] - A set of tags to be a associated
@@ -140,14 +140,14 @@ console.log(njoi.jsdoc()(schema));
 ⇒  * @property {Education[]} [education]
 ⇒  */
 ⇒ /**
-⇒  * @typedef Address
+⇒  * @typedef {Object} Address
 ⇒  * @property {string} [street] - The street
 ⇒  * @property {string} [houseNumber] - The housenumber.
-⇒  * @property {'condo'|'appartment'|'mansion'} [type]
+⇒  * @property {('condo'|'appartment'|'mansion')} [type]
 ⇒  * @property {string} [city] - The city
 ⇒  */
 ⇒ /**
-⇒  * @typedef Education
+⇒  * @typedef {Object} Education
 ⇒  * @property {string} [school] - The school attended
 ⇒  * @property {boolean} [degree] - Got the degree or not
 ⇒  */
