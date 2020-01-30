@@ -38,7 +38,13 @@ const schema = Joi.object().keys({
 
 ```javascript --run simple
 const njoi = require('njoi');
-console.log(njoi.jsonish(schema));
+console.log(njoi.jsonish()(schema));
+```
+
+Or one including comments:
+
+```javascript --run simple
+console.log(njoi.jsonish({comments: true})(schema));
 ```
 
 Or a markdown breakdown using:

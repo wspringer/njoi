@@ -31,3 +31,59 @@ exports[`njoi should a sensible description 1`] = `
   type: <string>,
 }"
 `;
+
+exports[`njoi should allow you to generate jsdoc 1`] = `
+"{
+  a: \\"yay\\",
+
+  b: <number>,
+
+  c: <boolean>,
+
+  d: [<string>, ...],
+
+  e: [{
+    first: <string>,
+  }, ...],
+
+  f: <string>,
+
+  type: <string>,
+
+  g: {
+    a|b|c: {
+      top: <number>,
+
+      left: <number>,
+    },
+  },
+}"
+`;
+
+exports[`njoi should allow you to generate jsdoc 2`] = `
+"/**
+ * @typedef {Object} Simple
+ * @property {string} a - Some string alkdsf jlkasj dfjklasj dfklj aklsj fkljaklsdfj klajs fklj aklsj fklja sklfjkl asjdfklj asklj klajsklfj aklsj dfklaskldfj klaj skldf jf
+ * @property {number} [b=3] - Some number
+ * @property {boolean} [c] - Some boolean
+ * @property {string[]} [d]
+ * @property {Person[]} [e]
+ * @property {('a'|'b'|'c')} [f]
+ * @property {('condo'|'appartment'|'mansion')} [type]
+ * @property {CoordinateHolder} [g] - The coordinates indexed by characters
+ */
+/**
+ * @typedef {Object} Person
+ * @property {string} [first]
+ */
+/**
+ * The coordinates indexed by characters
+ * @typedef {Object.<string,Location>} CoordinateHolder - Valid keys: 'a', 'b', 'c'
+ */
+/**
+ * @typedef {Object} Location
+ * @property {number} [top] - The top coordinate
+ * @property {number} [left] - The left coordinate
+ */
+"
+`;

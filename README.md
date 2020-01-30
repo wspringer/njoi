@@ -33,7 +33,37 @@ const schema = Joi.object().keys({
 
 ```javascript
 const njoi = require('njoi');
-console.log(njoi.jsonish(schema));
+console.log(njoi.jsonish()(schema));
+
+⇒ {
+⇒   name: <string>,
+⇒ 
+⇒   age: <number>,
+⇒ 
+⇒   tags: [<string>, ...],
+⇒ 
+⇒   address: {
+⇒     street: <string>,
+⇒ 
+⇒     houseNumber: <string>,
+⇒ 
+⇒     type: <string>,
+⇒ 
+⇒     city: <string>,
+⇒   },
+⇒ 
+⇒   education: [{
+⇒     school: <string>,
+⇒ 
+⇒     degree: <boolean>,
+⇒   }, ...],
+⇒ }
+```
+
+Or one including comments:
+
+```javascript
+console.log(njoi.jsonish({comments: true})(schema));
 
 ⇒ {
 ⇒   /**
