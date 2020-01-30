@@ -13,48 +13,40 @@ exports[`njoi should a sensible description 1`] = `
   /**
    * Some number
    */
-  b: <number>,
+  b: <number>?,
 
   /**
    * Some boolean
    */
-  c: <boolean>,
+  c: <boolean>?,
 
-  d: [<string>, ...],
+  d: [<string>?, ...],
 
   e: [{
-    first: <string>,
+    first: <string>?,
   }, ...],
 
-  f: <string>,
+  f: <string>?,
 
-  type: <string>,
+  type: <string>?,
 }"
 `;
 
 exports[`njoi should allow you to generate jsdoc 1`] = `
 "{
   a: \\"yay\\",
-
-  b: <number>,
-
-  c: <boolean>,
-
-  d: [<string>, ...],
-
+  b: <number>?,
+  c: <boolean>?,
+  d: [<string>?, ...],
   e: [{
-    first: <string>,
+    first: <string>?,
   }, ...],
-
-  f: <string>,
-
-  type: <string>,
-
+  f: <string>?,
+  type: <string>?,
   g: {
     a|b|c: {
-      top: <number>,
-
-      left: <number>,
+      top: <number>?,
+      left: <number>?,
     },
   },
 }"
