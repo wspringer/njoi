@@ -8,45 +8,45 @@ exports[`njoi should a sensible description 1`] = `
    * asjdfklj asklj klajsklfj aklsj dfklaskldfj klaj 
    * skldf jf
    */
-  a: \\"yay\\",
+  \\"a\\": \\"yay\\",
 
   /**
    * Some number
    */
-  b: <number>?,
+  \\"b\\": <number>?,
 
   /**
    * Some boolean
    */
-  c: <boolean>?,
+  \\"c\\": <boolean>?,
 
-  d: [<string>?, ...],
+  \\"d\\": [<string>?, ...],
 
-  e: [{
-    first: <string>?,
+  \\"e\\": [{
+    \\"first\\": <string>?,
   }, ...],
 
-  f: <string>?,
+  \\"f\\": <\\"a\\"|\\"b\\"|\\"c\\">?,
 
-  type: <string>?,
+  \\"type\\": <\\"condo\\"|\\"appartment\\"|\\"mansion\\">?,
 }"
 `;
 
 exports[`njoi should allow you to generate jsdoc 1`] = `
 "{
-  a: \\"yay\\",
-  b: <number>?,
-  c: <boolean>?,
-  d: [<string>?, ...],
-  e: [{
-    first: <string>?,
+  \\"a\\": \\"yay\\",
+  \\"b\\": <number>?,
+  \\"c\\": <boolean>?,
+  \\"d\\": [<string>?, ...],
+  \\"e\\": [{
+    \\"first\\": <string>?,
   }, ...],
-  f: <string>?,
-  type: <string>?,
-  g: {
-    a|b|c: {
-      top: <number>?,
-      left: <number>?,
+  \\"f\\": <\\"a\\"|\\"b\\"|\\"c\\">?,
+  \\"type\\": <\\"condo\\"|\\"appartment\\"|\\"mansion\\">?,
+  \\"g\\": {
+    \\"a\\"|\\"b\\"|\\"c\\": {
+      \\"top\\": <number>?,
+      \\"left\\": <number>?,
     },
   },
 }"

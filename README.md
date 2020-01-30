@@ -36,26 +36,18 @@ const njoi = require('njoi');
 console.log(njoi.jsonish()(schema));
 
 ⇒ {
-⇒   name: <string>,
-⇒ 
-⇒   age: <number>,
-⇒ 
-⇒   tags: [<string>, ...],
-⇒ 
-⇒   address: {
-⇒     street: <string>,
-⇒ 
-⇒     houseNumber: <string>,
-⇒ 
-⇒     type: <string>,
-⇒ 
-⇒     city: <string>,
+⇒   "name": <string>,
+⇒   "age": <number>?,
+⇒   "tags": [<string>?, ...],
+⇒   "address": {
+⇒     "street": <string>?,
+⇒     "houseNumber": <string>?,
+⇒     "type": <"condo"|"appartment"|"mansion">?,
+⇒     "city": <string>?,
 ⇒   },
-⇒ 
-⇒   education: [{
-⇒     school: <string>,
-⇒ 
-⇒     degree: <boolean>,
+⇒   "education": [{
+⇒     "school": <string>?,
+⇒     "degree": <boolean>?,
 ⇒   }, ...],
 ⇒ }
 ```
@@ -69,47 +61,47 @@ console.log(njoi.jsonish({comments: true})(schema));
 ⇒   /**
 ⇒    * The given name
 ⇒    */
-⇒   name: <string>,
+⇒   "name": <string>,
 ⇒ 
 ⇒   /**
 ⇒    * The age
 ⇒    */
-⇒   age: <number>,
+⇒   "age": <number>?,
 ⇒ 
 ⇒   /**
 ⇒    * A set of tags to be a associated
 ⇒    */
-⇒   tags: [<string>, ...],
+⇒   "tags": [<string>?, ...],
 ⇒ 
-⇒   address: {
+⇒   "address": {
 ⇒     /**
 ⇒      * The street
 ⇒      */
-⇒     street: <string>,
+⇒     "street": <string>?,
 ⇒ 
 ⇒     /**
 ⇒      * The housenumber.
 ⇒      */
-⇒     houseNumber: <string>,
+⇒     "houseNumber": <string>?,
 ⇒ 
-⇒     type: <string>,
+⇒     "type": <"condo"|"appartment"|"mansion">?,
 ⇒ 
 ⇒     /**
 ⇒      * The city
 ⇒      */
-⇒     city: <string>,
+⇒     "city": <string>?,
 ⇒   },
 ⇒ 
-⇒   education: [{
+⇒   "education": [{
 ⇒     /**
 ⇒      * The school attended
 ⇒      */
-⇒     school: <string>,
+⇒     "school": <string>?,
 ⇒ 
 ⇒     /**
 ⇒      * Got the degree or not
 ⇒      */
-⇒     degree: <boolean>,
+⇒     "degree": <boolean>?,
 ⇒   }, ...],
 ⇒ }
 ```
