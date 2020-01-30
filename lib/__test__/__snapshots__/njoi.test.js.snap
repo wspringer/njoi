@@ -32,6 +32,35 @@ exports[`njoi should a sensible description 1`] = `
 }"
 `;
 
+exports[`njoi should a sensible description 2`] = `
+"### a: _string_
+
+Some string alkdsf jlkasj dfjklasj dfklj aklsj fkljaklsdfj klajs fklj aklsj 
+fklja sklfjkl asjdfklj asklj klajsklfj aklsj dfklaskldfj klaj skldf jf.
+
+### b: _number?_
+
+Some number. Defaults to \`3\`.
+
+### c: _boolean?_
+
+Some boolean.
+
+### d[]: _string?_
+
+### e[].first: _string?_
+
+### f: _string?_
+
+Set it to either \`a\`, \`b\`, or \`c\`.
+
+### type: _string?_
+
+Set it to either \`condo\`, \`appartment\`, or \`mansion\`.
+
+"
+`;
+
 exports[`njoi should allow you to generate jsdoc 1`] = `
 "{
   \\"a\\": \\"yay\\",
