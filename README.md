@@ -38,17 +38,17 @@ console.log(njoi.jsonish()(schema));
 ⇒ {
 ⇒   "name": <string>,
 ⇒   "age": <number>?,
-⇒   "tags": [<string>?, ...],
+⇒   "tags": [<string>, ...]?,
 ⇒   "address": {
 ⇒     "street": <string>?,
 ⇒     "houseNumber": <string>?,
 ⇒     "type": <"condo"|"appartment"|"mansion">?,
 ⇒     "city": <string>?,
-⇒   },
+⇒   }?,
 ⇒   "education": [{
 ⇒     "school": <string>?,
 ⇒     "degree": <boolean>?,
-⇒   }, ...],
+⇒   }, ...]?,
 ⇒ }
 ```
 
@@ -71,7 +71,7 @@ console.log(njoi.jsonish({comments: true})(schema));
 ⇒   /**
 ⇒    * A set of tags to be a associated
 ⇒    */
-⇒   "tags": [<string>?, ...],
+⇒   "tags": [<string>, ...]?,
 ⇒ 
 ⇒   "address": {
 ⇒     /**
@@ -90,7 +90,7 @@ console.log(njoi.jsonish({comments: true})(schema));
 ⇒      * The city
 ⇒      */
 ⇒     "city": <string>?,
-⇒   },
+⇒   }?,
 ⇒ 
 ⇒   "education": [{
 ⇒     /**
@@ -102,7 +102,7 @@ console.log(njoi.jsonish({comments: true})(schema));
 ⇒      * Got the degree or not
 ⇒      */
 ⇒     "degree": <boolean>?,
-⇒   }, ...],
+⇒   }, ...]?,
 ⇒ }
 ```
 

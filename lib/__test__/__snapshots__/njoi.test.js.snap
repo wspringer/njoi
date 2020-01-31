@@ -20,11 +20,11 @@ exports[`njoi should a sensible description 1`] = `
    */
   \\"c\\": <boolean>?,
 
-  \\"d\\": [<string>?, ...],
+  \\"d\\": [<string>, ...]?,
 
   \\"e\\": [{
     \\"first\\": <string>?,
-  }, ...],
+  }, ...]?,
 
   \\"f\\": <\\"a\\"|\\"b\\"|\\"c\\">?,
 
@@ -62,26 +62,6 @@ Set it to either \`condo\`, \`appartment\`, or \`mansion\`.
 `;
 
 exports[`njoi should allow you to generate jsdoc 1`] = `
-"{
-  \\"a\\": \\"yay\\",
-  \\"b\\": <number>?,
-  \\"c\\": <boolean>?,
-  \\"d\\": [<string>?, ...],
-  \\"e\\": [{
-    \\"first\\": <string>?,
-  }, ...],
-  \\"f\\": <\\"a\\"|\\"b\\"|\\"c\\">?,
-  \\"type\\": <\\"condo\\"|\\"appartment\\"|\\"mansion\\">?,
-  \\"g\\": {
-    \\"a\\"|\\"b\\"|\\"c\\": {
-      \\"top\\": <number>?,
-      \\"left\\": <number>?,
-    },
-  },
-}"
-`;
-
-exports[`njoi should allow you to generate jsdoc 2`] = `
 "/**
  * @typedef {Object} Simple
  * @property {string} a - Some string alkdsf jlkasj dfjklasj dfklj aklsj fkljaklsdfj klajs fklj aklsj fklja sklfjkl asjdfklj asklj klajsklfj aklsj dfklaskldfj klaj skldf jf
@@ -92,6 +72,7 @@ exports[`njoi should allow you to generate jsdoc 2`] = `
  * @property {('a'|'b'|'c')} [f]
  * @property {('condo'|'appartment'|'mansion')} [type]
  * @property {CoordinateHolder} [g] - The coordinates indexed by characters
+ * @property {(string|Object)} [h]
  */
 /**
  * @typedef {Object} Person
