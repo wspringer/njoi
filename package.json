@@ -1,5 +1,6 @@
 {
   "name": "njoi",
+  "description": "Generate all sorts of fancy stuff from Joi schemas",
   "version": "0.2.7",
   "license": "MIT",
   "main": "lib/njoi.js",
@@ -15,5 +16,6 @@
   "devDependencies": {
     "jest": "^24.9.0",
     "runmd": "^1.2.1"
-  }
+  },
+  "repository": "github:wspringer/njoi"
 }
