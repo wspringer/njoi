@@ -63,8 +63,15 @@ Set it to either \`condo\`, \`appartment\`, or \`mansion\`.
 
 exports[`njoi should allow you to generate jsdoc 1`] = `
 "/**
+ * Impossible long description with way more text than should be allowed on a 
+ * single line, but adding it anyhow to make sure wrapping is working. Impossible 
+ * long description with way more text than should be allowed on a single line, but 
+ * adding it anyhow to make sure wrapping is working. 
+
  * @typedef {Object} Simple
- * @property {string} a - Some string alkdsf jlkasj dfjklasj dfklj aklsj fkljaklsdfj klajs fklj aklsj fklja sklfjkl asjdfklj asklj klajsklfj aklsj dfklaskldfj klaj skldf jf
+ * @property {string} a - Some string alkdsf jlkasj dfjklasj dfklj aklsj 
+ * fkljaklsdfj klajs fklj aklsj fklja sklfjkl asjdfklj asklj klajsklfj aklsj 
+ * dfklaskldfj klaj skldf jf
  * @property {number} [b=3] - Some number
  * @property {boolean} [c] - Some boolean
  * @property {string[]} [d]
