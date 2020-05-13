@@ -38,23 +38,23 @@ exports[`njoi should a sensible description 2`] = `
 Some string alkdsf jlkasj dfjklasj dfklj aklsj fkljaklsdfj klajs fklj aklsj 
 fklja sklfjkl asjdfklj asklj klajsklfj aklsj dfklaskldfj klaj skldf jf.
 
-### b: _number?_
+### b: _number (Optional)_
 
 Some number. Defaults to \`3\`.
 
-### c: _boolean?_
+### c: _boolean (Optional)_
 
 Some boolean.
 
-### d[]: _string?_
+### d[]: _string (Optional)_
 
-### e[].first: _string?_
+### e[].first: _string (Optional)_
 
-### f: _string?_
+### f: _string (Optional)_
 
 Set it to either \`a\`, \`b\`, or \`c\`.
 
-### type: _string?_
+### type: _string (Optional)_
 
 Set it to either \`condo\`, \`appartment\`, or \`mansion\`.
 

@@ -115,33 +115,33 @@ console.log(njoi.markdown()(schema));
 ⇒ 
 ⇒ The given name.
 ⇒ 
-⇒ ### age: _number?_
+⇒ ### age: _number (Optional)_
 ⇒ 
 ⇒ The age. Defaults to `5`.
 ⇒ 
-⇒ ### tags[]: _string?_
+⇒ ### tags[]: _string (Optional)_
 ⇒ 
-⇒ ### address.street: _string?_
+⇒ ### address.street: _string (Optional)_
 ⇒ 
 ⇒ The street.
 ⇒ 
-⇒ ### address.houseNumber: _string?_
+⇒ ### address.houseNumber: _string (Optional)_
 ⇒ 
 ⇒ The housenumber.
 ⇒ 
-⇒ ### address.type: _string?_
+⇒ ### address.type: _string (Optional)_
 ⇒ 
 ⇒ Set it to either `condo`, `appartment`, or `mansion`.
 ⇒ 
-⇒ ### address.city: _string?_
+⇒ ### address.city: _string (Optional)_
 ⇒ 
 ⇒ The city.
 ⇒ 
-⇒ ### education[].school: _string?_
+⇒ ### education[].school: _string (Optional)_
 ⇒ 
 ⇒ The school attended.
 ⇒ 
-⇒ ### education[].degree: _boolean?_
+⇒ ### education[].degree: _boolean (Optional)_
 ⇒ 
 ⇒ Got the degree or not.
 ⇒ 
@@ -196,37 +196,37 @@ console.log(njoi.markdown({extra: envVariable})(schema));
 ⇒ 
 ⇒ The given name. Use the `NAME` environment variable to override this setting.
 ⇒ 
-⇒ ### age: _number?_
+⇒ ### age: _number (Optional)_
 ⇒ 
 ⇒ The age. Defaults to `5`. Use the `AGE` environment variable to override this 
 ⇒ setting.
 ⇒ 
-⇒ ### tags[]: _string?_
+⇒ ### tags[]: _string (Optional)_
 ⇒ 
-⇒ ### address.street: _string?_
+⇒ ### address.street: _string (Optional)_
 ⇒ 
 ⇒ The street. Use the `ADDRESS_STREET` environment variable to override this 
 ⇒ setting.
 ⇒ 
-⇒ ### address.houseNumber: _string?_
+⇒ ### address.houseNumber: _string (Optional)_
 ⇒ 
 ⇒ The housenumber. Use the `ADDRESS_HOUSENUMBER` environment variable to override 
 ⇒ this setting.
 ⇒ 
-⇒ ### address.type: _string?_
+⇒ ### address.type: _string (Optional)_
 ⇒ 
 ⇒ Use the `ADDRESS_TYPE` environment variable to override this setting. Set it to 
 ⇒ either `condo`, `appartment`, or `mansion`.
 ⇒ 
-⇒ ### address.city: _string?_
+⇒ ### address.city: _string (Optional)_
 ⇒ 
 ⇒ The city. Use the `ADDRESS_CITY` environment variable to override this setting.
 ⇒ 
-⇒ ### education[].school: _string?_
+⇒ ### education[].school: _string (Optional)_
 ⇒ 
 ⇒ The school attended.
 ⇒ 
-⇒ ### education[].degree: _boolean?_
+⇒ ### education[].degree: _boolean (Optional)_
 ⇒ 
 ⇒ Got the degree or not.
 ⇒ 
