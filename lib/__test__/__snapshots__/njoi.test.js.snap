@@ -8,7 +8,7 @@ exports[`njoi should a sensible description 1`] = `
    * asjdfklj asklj klajsklfj aklsj dfklaskldfj klaj 
    * skldf jf
    */
-  \\"a\\": \\"yay\\",
+  \\"a\\": <string>,
 
   /**
    * Some number
