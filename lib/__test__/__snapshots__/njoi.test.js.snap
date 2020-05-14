@@ -96,3 +96,15 @@ exports[`njoi should allow you to generate jsdoc 1`] = `
  */
 "
 `;
+
+exports[`njoi should treat strings with defaults as an other type 1`] = `
+"{
+  \\"foo\\": <string>?,
+}"
+`;
+
+exports[`njoi should treat uris correctly 1`] = `
+"{
+  \\"foo\\": <uri>,
+}"
+`;
