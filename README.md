@@ -2,6 +2,7 @@
   -- This file is auto-generated from ./README.js.md. Changes should be made there.
   -->
 
+
 # README
 
 An experiment to render a sensible JSON-alike structure from the Joi definition
@@ -10,31 +11,39 @@ to be copied in to (Github) fenced markdown sections.
 If this is the Joi schema you're defining:
 
 ```javascript
-const Joi = require('@hapi/joi');
-const schema = Joi.object().keys({
-  name: Joi.string().description('The given name').required(),
-  age: Joi.number().description('The age').default(5),
-  tags: Joi.array().items(Joi.string()).description('A set of tags to be a associated'),
-  address: Joi.object().keys({
-    street: Joi.string().description('The street'),
-    houseNumber: Joi.string().description('The housenumber.'),
-    type: Joi.string().valid('condo', 'appartment', 'mansion'),
-    city: Joi.string().description('The city')
-  }).label('Address'),
-  education: Joi.array().items(Joi.object().keys({
-    school: Joi.string().description('The school attended'),
-    degree: Joi.boolean().description('Got the degree or not')
-  }).label('Education'))
-}).label('Person');
-
+const Joi = require("joi");
+const schema = Joi.object()
+  .keys({
+    name: Joi.string().description("The given name").required(),
+    age: Joi.number().description("The age").default(5),
+    tags: Joi.array()
+      .items(Joi.string())
+      .description("A set of tags to be a associated"),
+    address: Joi.object()
+      .keys({
+        street: Joi.string().description("The street"),
+        houseNumber: Joi.string().description("The housenumber."),
+        type: Joi.string().valid("condo", "appartment", "mansion"),
+        city: Joi.string().description("The city"),
+      })
+      .label("Address"),
+    education: Joi.array().items(
+      Joi.object()
+        .keys({
+          school: Joi.string().description("The school attended"),
+          degree: Joi.boolean().description("Got the degree or not"),
+        })
+        .label("Education")
+    ),
+  })
+  .label("Person");
 ```
 
 … then you will be able to generate something a little easier on the eyes using:
 
 ```javascript
-const njoi = require('njoi');
+const njoi = require("njoi");
 console.log(njoi.jsonish()(schema));
-
 ⇒ {
 ⇒   "name": <string>,
 ⇒   "age": <number>?,
@@ -55,8 +64,7 @@ console.log(njoi.jsonish()(schema));
 Or one including comments:
 
 ```javascript
-console.log(njoi.jsonish({comments: true})(schema));
-
+console.log(njoi.jsonish({ comments: true })(schema));
 ⇒ {
 ⇒   /**
 ⇒    * The given name
@@ -110,7 +118,6 @@ Or a markdown breakdown using:
 
 ```javascript
 console.log(njoi.markdown()(schema));
-
 ⇒ ### name: _string_
 ⇒ 
 ⇒ The given name.
@@ -152,7 +159,6 @@ Or a JSDoc breakdown using:
 
 ```javascript
 console.log(njoi.jsdoc()(schema));
-
 ⇒ /**
 ⇒  * @typedef {Object} Person
 ⇒  * @property {string} name - The given name
@@ -161,37 +167,26 @@ console.log(njoi.jsdoc()(schema));
 ⇒  * @property {Address} [address]
 ⇒  * @property {Education[]} [education]
 ⇒  */
-⇒ /**
-⇒  * @typedef {Object} Address
-⇒  * @property {string} [street] - The street
-⇒  * @property {string} [houseNumber] - The housenumber.
-⇒  * @property {('condo'|'appartment'|'mansion')} [type]
-⇒  * @property {string} [city] - The city
-⇒  */
-⇒ /**
-⇒  * @typedef {Object} Education
-⇒  * @property {string} [school] - The school attended
-⇒  * @property {boolean} [degree] - Got the degree or not
-⇒  */
 ⇒ 
 ```
-
 
 If you want, then can pass in a callback to have the ability to render some
 additional lines:
 
 ```javascript
 const envVariable = (node, context) => {
-  if (context && context.indexOf('[]') < 0) {
-    const name = context.split('.').map(str => str.toUpperCase()).join('_');
-    return `Use the \`${name}\` environment variable to override this setting.`
+  if (context && context.indexOf("[]") < 0) {
+    const name = context
+      .split(".")
+      .map((str) => str.toUpperCase())
+      .join("_");
+    return `Use the \`${name}\` environment variable to override this setting.`;
   } else {
     return void 0;
   }
-}
+};
 
-console.log(njoi.markdown({extra: envVariable})(schema));
-
+console.log(njoi.markdown({ extra: envVariable })(schema));
 ⇒ ### name: _string_
 ⇒ 
 ⇒ The given name. Use the `NAME` environment variable to override this setting.
@@ -233,6 +228,6 @@ console.log(njoi.markdown({extra: envVariable})(schema));
 ⇒ 
 ```
 
+---
 
-----
-Markdown generated from [./README.js.md](README.js.md) by [![RunMD Logo](http://i.imgur.com/h0FVyzU.png)](https://github.com/broofa/runmd)
+Markdown generated from [./README.js.md](./README.js.md) by <a href="https://github.com/broofa/runmd"><image height="12px" src="https://camo.githubusercontent.com/5c7c603cd1e6a43370b0a5063d457e0dabb74cf317adc7baba183acb686ee8d0/687474703a2f2f692e696d6775722e636f6d2f634a4b6f3662552e706e67" /></a>

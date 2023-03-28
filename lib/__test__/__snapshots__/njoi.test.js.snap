@@ -32,7 +32,7 @@ exports[`njoi should a sensible description 1`] = `
 }"
 `;
 
-exports[`njoi should a sensible description 2`] = `
+exports[`njoi should allow you to generate jsdoc 1`] = `
 "### a: _string_
 
 Some string alkdsf jlkasj dfjklasj dfklj aklsj fkljaklsdfj klajs fklj aklsj 
@@ -58,42 +58,20 @@ Set it to either \`a\`, \`b\`, or \`c\`.
 
 Set it to either \`condo\`, \`appartment\`, or \`mansion\`.
 
-"
-`;
+### g.&lt;character&gt;.top: _number (optional)_
 
-exports[`njoi should allow you to generate jsdoc 1`] = `
-"/**
- * Impossible long description with way more text than should be allowed on a 
- * single line, but adding it anyhow to make sure wrapping is working. Impossible 
- * long description with way more text than should be allowed on a single line, but 
- * adding it anyhow to make sure wrapping is working. 
+The top coordinate.
 
- * @typedef {Object} Simple
- * @property {string} a - Some string alkdsf jlkasj dfjklasj dfklj aklsj 
- * fkljaklsdfj klajs fklj aklsj fklja sklfjkl asjdfklj asklj klajsklfj aklsj 
- * dfklaskldfj klaj skldf jf
- * @property {number} [b=3] - Some number
- * @property {boolean} [c] - Some boolean
- * @property {string[]} [d]
- * @property {Person[]} [e]
- * @property {('a'|'b'|'c')} [f]
- * @property {('condo'|'appartment'|'mansion')} [type]
- * @property {CoordinateHolder} [g] - The coordinates indexed by characters
- * @property {(string|Object)} [h]
- */
-/**
- * @typedef {Object} Person
- * @property {string} [first]
- */
-/**
- * The coordinates indexed by characters
- * @typedef {Object.<string,Location>} CoordinateHolder - Valid keys: 'a', 'b', 'c'
- */
-/**
- * @typedef {Object} Location
- * @property {number} [top] - The top coordinate
- * @property {number} [left] - The left coordinate
- */
+### g.&lt;character&gt;.left: _number (optional)_
+
+The left coordinate.
+
+### h: _string (optional)_
+
+### h.first: _string (optional)_
+
+### h.second: _number (optional)_
+
 "
 `;
 
