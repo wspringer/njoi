@@ -1,7 +1,7 @@
 {
   "name": "njoi",
   "description": "Generate all sorts of fancy stuff from Joi schemas",
-  "version": "0.2.11",
+  "version": "0.3.0",
   "license": "MIT",
   "main": "lib/njoi.js",
   "scripts": {
